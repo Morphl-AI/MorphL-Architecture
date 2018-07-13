@@ -26,7 +26,7 @@ Upon successful completion of the preprocessing task, the veteran_users table in
 At this point, AirFlow will launch an instance of a Docker container with a TensorFlow model training routine, which will ingest the features and labels in veteran_users and will save a model file for later use.
 
 ### Every week:  
-Upon successful completion of the TensorFlow model training routine, AirFlow will launch an instance of a Docker container with a TensorFlow ModelServer, which will ingest the features in the current version of the recent_users and make use of the model file that was saved at the end of the training run.  
+Upon successful completion of the TensorFlow model training routine, AirFlow will launch an instance of a Docker container with a TensorFlow ModelServer, which will ingest the features in the current version of the recent_users and will make use of the model file that was saved at the end of the training run.  
 At the end of this batch prediction run, the resulting predictions will be loaded into the "prediction" column of the current version of the recent_users table in Cassandra.
 
 ### Every week:  
